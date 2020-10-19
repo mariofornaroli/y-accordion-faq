@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ff6a74;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #bfcddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #fff;
+    width: 600px;
+    border-top: 7px solid;
+    box-shadow: 0 12px 35px 0 rgba(163, 117, 117, 0.2);
+    padding: 48px;
+}
+
+.accordion-item {
+    border-top: 1px solid #eee;
+    padding-top: 32px;
+}
+
+h1 {
+    margin-bottom: 48px;
+    font-size: 2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    text-align: center;
+}
+
+button {
+    position: relative;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bolder;
+    letter-spacing: 0.7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button i {
+    margin-left: 16px;
+}
+
+button i.fa-angle-up {
+    display: none;
+}
+
+.response {
+    color: #90a3b8;
+    padding-top: 16px;
+    margin-bottom: 16px;
+    letter-spacing: 0.7px;
+    line-height: 24px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 0.3s linear, max-height 0.3s linear;
+}
+
+/*  ----  Accordion opened  ----  */
+
+button.opened ~ .response {
+    max-height: 150px;
+    opacity: 1;
+    transition: opacity 0.3s linear, max-height 0.3s linear;
+}
+
+button.opened i.fa-angle-down {
+    display: none;
+}
+
+button.opened i.fa-angle-up {
+    display: block;
+}
